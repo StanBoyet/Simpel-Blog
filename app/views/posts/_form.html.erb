@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#mytags").tagit({
+          availableTags: <%= Post.tag_counts.map(&:name).to_json.html_safe %> ,
+          singleField: true,
+          singleFieldNode: $('#tag_list')
+          });
+    });
+</script>
+
 <%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
@@ -5,6 +15,14 @@
     <%= f.input :title %>
     <%= f.input :content %>
     <%= f.collection_select(:type_id, Type.all, :id, :name, include_blank: true) %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.label :tags, :class => "control-label"  %>
+    <div class="controls">
+    <%= f.hidden_field :tag_list, id:"tag_list" %>
+    <ul class="form-control" id="mytags"></ul>
+    </div>
   </div>
 
   <div class="form-actions">

@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //= require custom.js.coffee
+//= require tag-it.js
