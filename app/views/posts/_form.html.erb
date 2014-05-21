@@ -14,7 +14,8 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :content %>
-    <%= f.collection_select(:type_id, Type.all, :id, :name, include_blank: true) %>
+    <%= f.label :type %><br>
+    <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: true %>
   </div>
 
   <div class="form-inputs">
