@@ -24,7 +24,10 @@ gem 'title'
 gem 'uglifier'
 gem 'unicorn'
 gem 'devise'
+gem 'omniauth-facebook'
+
 gem 'acts-as-taggable-on'
+
 
 group :development do
   gem 'foreman'

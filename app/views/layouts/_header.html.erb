@@ -30,6 +30,9 @@
         <li>
           <%= link_to "Sign Up", "#signup", "data-toggle" => "modal", :class => 'btn btn-small' %>
         </li>
+        <li>
+        <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
+        </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
