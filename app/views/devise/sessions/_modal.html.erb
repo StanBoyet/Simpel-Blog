@@ -20,8 +20,8 @@
         <%= f.button :submit, "Sign in", :class => 'btn btn-primary' ,:id => 'login_button'%>
         <% end %>
         <div class="col-md-6 col-md-offset-3">
-          <%= link_to user_omniauth_authorize_path(:twitter), :class => "btn btn-block btn-social btn-twitter"  do %>
-            <i class="fa fa-twitter"></i> Connect with Twitter
+          <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook"  do %>
+            <i class="fa fa-facebook"></i> Connect with Facebook
           <% end %>
         </div>
       </div>
@@ -53,8 +53,8 @@
         <%= f.button :submit, "Sign up", :class => 'btn btn-primary'%>
         <% end %>
         <div class="col-md-6 col-md-offset-3">
-          <%= link_to user_omniauth_authorize_path(:twitter), :class => "btn btn-block btn-social btn-twitter"  do %>
-            <i class="fa fa-twitter"></i> Connect with Twitter
+          <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook"  do %>
+            <i class="fa fa-facebook"></i> Connect with Facebook
           <% end %>
         </div>
       </div>
