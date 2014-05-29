@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
       # Create the user if it's a new registration
       if user.nil?
         user = User.new(
-          name: auth.extra.raw_info.name,
+          name: auth.info.nickname,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : TEMP_EMAIL,
           password: Devise.friendly_token[0,20]
