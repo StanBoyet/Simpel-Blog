@@ -24,7 +24,9 @@ gem 'title'
 gem 'uglifier'
 gem 'unicorn'
 gem 'devise'
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'acts-as-taggable-on'
 

@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
-  :omniauthable, :omniauth_providers => [:facebook]
+  :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   has_many :posts
 
@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
           email: email ? email : TEMP_EMAIL,
           password: Devise.friendly_token[0,20]
         )
-        user.skip_confirmation!
+        # user.skip_confirmation!
         user.save!
       end
     end
