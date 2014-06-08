@@ -5,13 +5,12 @@ class PostsController < ApplicationController
     @tags = Post.tag_counts_on(:tags)
   end
 
-  
   def tag
     @posts = Post.tagged_with(params[:id])
     @tags = Post.tag_counts_on(:tags)
     render :action => 'index'
   end
-  
+
   # GET /posts
   def index
     @tags = Post.tag_counts_on(:tags)

@@ -1,27 +1,35 @@
-<h1>Listing posts</h1>
-<%= link_to content_tag(:i, '', class: 'fa fa-file-text') +
-                  content_tag(:span, ' Add a new post'),
-                  new_post_path, class: "btn btn-primary" %>
-<% @posts.each do |post| %>
+<div class="row">
+  <div class="col-md-8">
+    <h1>Listing posts</h1>
+    <%= link_to content_tag(:i, '', class: 'fa fa-file-text') +
+                      content_tag(:span, ' Add a new post'),
+                      new_post_path, class: "btn btn-primary" %>
+    <% @posts.each do |post| %>
 
-  <h2><%= post.title %></h2>
-  <% if post.type.name == 'Link' %>
-  <%= link_to post.content, post.content %>
-  <% end %>
-  <br>
-  <span>Type : <%= post.type.name %></span>
-  <% if post.user && post.user.name %>
-   | <span class="pull-right">Author : <%= post.user.name %></span>
-  <% end %>
+      <h2><%= post.title %></h2>
+      <% if post.type.name == 'Link' %>
+      <%= link_to post.content, post.content %>
+      <% end %>
+      <br>
+      <span>Type : <%= post.type.name %></span>
+      <% if post.user && post.user.name %>
+       | <span class="pull-right">Author : <%= post.user.name %></span>
+      <% end %>
 
-  <% if current_user == post.user && !current_user.nil? %>
-  <%= link_to 'Show', post %> |
-  <%= link_to 'Edit', edit_post_path(post) %> |
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <hr>
-<% end %>
+      <% if current_user == post.user && !current_user.nil? %>
+      <%= link_to 'Show', post %> |
+      <%= link_to 'Edit', edit_post_path(post) %> |
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      <hr>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h1>Tag cloud</h1>
+    <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+    <% end %>
+  </div>
+</div>
 
-<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-  <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
-<% end %>
+
