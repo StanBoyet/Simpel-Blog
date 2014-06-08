@@ -5,6 +5,7 @@
                       content_tag(:span, ' Add a new post'),
                       new_post_path, class: "btn btn-primary" %>
     <% @posts.each do |post| %>
+    <article class="post">
 
       <h2><%= post.title %></h2>
       <% if post.type.name == 'Link' %>
@@ -15,10 +16,11 @@
       <% if post.user && post.user.name %>
        | <span class="pull-right">Author : <%= post.user.name %></span>
       <% end %>
-      <ul class="tags">
-        <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <div class="clearfix"></div>
+      <ul class="tags pull-right">
+        <% post.tags.each do |tag| %>
           <li>
-            <%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %>
+            <%= link_to tag.name, { :action => :tag, :id => tag.name }%>
           </li>
         <% end %>
       </ul>
@@ -29,6 +31,7 @@
       <% end %>
       <hr>
     <% end %>
+    </article>
   </div>
   <div class="col-md-4 tagcloud">
     <h1>Tag cloud</h1>

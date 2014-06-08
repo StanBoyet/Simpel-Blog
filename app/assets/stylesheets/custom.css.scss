@@ -75,9 +75,8 @@ body {
 .tags{
   margin:0;
   padding:0;
-  position:absolute;
-  right:24px;
-  bottom:8px;
+  position: inherit;
+  bottom:-28px;
   list-style:none;
 }
 
@@ -102,11 +101,6 @@ body {
   -webkit-border-top-right-radius:4px;  
   border-top-right-radius:4px;  
 } 
-@media screen and (max-width: 992px){
-  .tags{
-    bottom: -12px;
-  }
-}
 
 .tags a:before{
   content:"";
@@ -144,4 +138,9 @@ body {
 
 .tagcloud a {
   color: inherit;
+}
+
+.post {
+
+position: relative;
 }
