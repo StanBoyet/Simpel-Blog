@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include ActsAsTaggableOn::TagsHelper
+
   def resource_name
     :user
   end

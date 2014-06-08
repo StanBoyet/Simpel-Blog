@@ -1,8 +1,20 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+
+  
+  def tag
+    @posts = Post.tagged_with(params[:id])
+    @tags = Post.tag_counts_on(:tags)
+    render :action => 'index'
+  end
+  
   # GET /posts
   def index
+    @tags = Post.tag_counts_on(:tags)
     @posts = Post.all
   end
 
