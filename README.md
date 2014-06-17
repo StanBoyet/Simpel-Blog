@@ -1,6 +1,8 @@
 Simpel-blog
 ===========
 
+[![Code Climate](https://codeclimate.com/github/StanBoyet/simpel-blog.png)](https://codeclimate.com/github/StanBoyet/simpel-blog)
+
 Getting Started
 ---------------
 
