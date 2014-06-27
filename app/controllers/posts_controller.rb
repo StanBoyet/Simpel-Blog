@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def tag
     @posts = Post.tagged_with(params[:id])
+    @post = Post.new
     @tags = Post.tag_counts_on(:tags)
     render :action => 'index'
   end
