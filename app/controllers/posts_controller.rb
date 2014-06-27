@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   def index
     @tags = Post.tag_counts_on(:tags)
     @posts = Post.all
+    @post = Post.new
   end
 
   # GET /posts/1
@@ -33,6 +34,7 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    @post.type_id = Type.where(:name => "Link").first.id
     @post.user_id = current_user.id
 
     if @post.save

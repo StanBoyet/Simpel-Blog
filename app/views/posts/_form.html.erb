@@ -1,32 +1,35 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#mytags").tagit({
-          availableTags: <%= Post.tag_counts.map(&:name).to_json.html_safe %> ,
-          singleField: true,
-          singleFieldNode: $('#tag_list')
-          });
-    });
+$(document).ready(function() {
+  $("#mytags").tagit({
+    availableTags: <%= Post.tag_counts.map(&:name).to_json.html_safe %> ,
+    singleField: true,
+    singleFieldNode: $('#tag_list')
+  });
+});
 </script>
 
 <%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.label :type %><br>
-    <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: true %>
+<div class="form-inputs form-horizontal">
+  <div class="form-group">
+    <%= f.label :title, class: "control-label col-md-3" %>
+    <div class="col-md-9"><%= f.text_field :title, class: "form-control" %></div>
   </div>
-
-  <div class="form-inputs">
-    <%= f.label :tags, :class => "control-label"  %>
-    <div class="controls">
-    <%= f.hidden_field :tag_list, id:"tag_list" %>
-    <ul class="form-control" id="mytags"></ul>
+  <div class="form-group">
+    <%= f.label :content, class: "control-label col-md-3" %>
+    <div class="col-md-9"><%= f.text_field :content, class: "form-control" %></div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tags, class: "control-label col-md-3" %>
+    <div class="controls col-md-9">
+      <%= f.hidden_field :tag_list, id:"tag_list" %>
+      <ul class="form-control" id="mytags"></ul>
     </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<div class="form-actions">
+  <%= f.button :submit, :class => "pull-right" %>
+</div>
 <% end %>
