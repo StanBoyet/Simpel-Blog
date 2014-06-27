@@ -1,6 +1,10 @@
 Simpel-blog
 ===========
 
+[![Code Climate](https://codeclimate.com/github/StanBoyet/simpel-blog.png)](https://codeclimate.com/github/StanBoyet/simpel-blog)
+
+[![Inline docs](http://inch-ci.org/github/stanboyet/simpel-blog.png?branch=master)](http://inch-ci.org/github/stanboyet/simpel-blog)
+
 Getting Started
 ---------------
 
