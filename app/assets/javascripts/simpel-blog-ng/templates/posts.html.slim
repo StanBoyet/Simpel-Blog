@@ -1,0 +1,40 @@
+.row
+  .col-md-8.posts
+    h1  Listing Posts
+    article.post.clearfix ng-repeat="post in postPromise.posts track by $index" ng-controller="PostRowController"
+      h2 : a href=true {{ post.title }}
+      a ng-if="post_is_link " ng-href="post.content" {{ post.content }}
+      br
+      span Type : {{ post.type_name }}
+      span.pull-right ng-if="post.user_name" Author : {{ post.user_name }}
+      .clear
+      ul.tags.pull-right.clearfix
+        li.title : h4 Tags
+        li.single-tag.pull-right ng-repeat="tag in post.tags"
+          a ng-href=true {{ tag.name }}
+
+
+  .col-md-4.tagcloud
+    h1 Tag Cloud
+    br
+    ul
+      li ng-repeat="tag in tagsPromise.tags"
+        a href=true {{ tag.name }}
+
+    hr
+    h1 Add New Post
+    br
+    div
+      form ng-submit='createPost()'
+        .form-inputs.form-horizontal
+          .form-group
+            label.control-label.col-md-3 for='post_title'
+            .col-md-9
+              input.form-control type="text" id="post_title" ng-model="freshPost.title"
+          .form-group
+            label.control-label.col-md-3 for='post_content'
+            .col-md-9
+              input.form-control type="text" id="post_content" ng-model="freshPost.content"
+        .form-actions
+          button.pull-right type="submit" Save
+

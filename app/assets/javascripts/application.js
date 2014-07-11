@@ -13,8 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
+//= require angular
+//= require angular-route
+//= require angular-resource
+//= require angular-rails-templates
+//= require simpel-blog-ng/simpel-blog-ng
 //= require custom.js.coffee
 //= require tag-it.js

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '2.1.1'
 
@@ -33,6 +34,13 @@ gem 'font-awesome-rails'
 gem 'pg'
 
 gem 'slim'
+gem 'active_model_serializers', '~> 0.9.0.alpha1'
+
+# angular related
+gem 'angularjs-rails', '~> 1.2.19'
+gem 'angular-rails-templates', '~> 0.1.3'
+gem 'rails-assets-noty', '~> 2.2.5'
+
 
 group :development do
   gem 'foreman'
