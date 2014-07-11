@@ -30,6 +30,8 @@ gem 'omniauth-twitter'
 gem 'acts-as-taggable-on'
 gem "font-awesome-rails"
 
+gem 'slim'
+
 group :development do
   gem 'foreman'
   gem 'spring'
