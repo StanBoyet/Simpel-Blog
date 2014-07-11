@@ -1,0 +1,42 @@
+.row
+  .col-md-8.posts
+    h1
+      | Listing Posts
+    -@posts.each do |post|
+      article.post
+        h2
+          =link_to post.title, post
+        -if post.type.name == 'Link'
+          =link_to post.content, post.content
+        br
+        span
+          | Type : 
+          =post.type.name
+        -if post.user && post.user.name
+          | |
+          span.pull-right
+            | Author : 
+            =post.user.name
+        .clear
+        ul.tags.pull-right
+          li.title
+            h4
+              | Tags
+          -post.tags.each do |tag|
+            li.single-tag.pull-right
+              =link_to tag.name, { action: :tag, id: tag.name }
+        .clear
+  .col-md-4.tagcloud
+    h1
+      | Tag Cloud
+    br
+    -tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+      =link_to tag.name, { action: :tag, id:tag.name}, class: css_class 
+
+    -if user_signed_in?
+      hr
+      h1
+        | Add New Post
+      br
+      div
+        =render 'post/form'

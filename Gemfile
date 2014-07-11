@@ -32,6 +32,8 @@ gem 'font-awesome-rails'
 
 gem 'pg'
 
+gem 'slim'
+
 group :development do
   gem 'foreman'
   gem 'spring'
