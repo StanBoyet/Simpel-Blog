@@ -18,5 +18,9 @@ class Post < ActiveRecord::Base
   acts_as_taggable
 
   validates_presence_of :type, :title, :content
+
+  def author
+  	user
+  end
   
 end

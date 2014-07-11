@@ -12,7 +12,6 @@ gem 'high_voltage'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'neat', '~> 1.5.1'
-gem 'pg'
 gem 'rack-timeout'
 gem 'rails', '~> 4.1.0'
 gem 'recipient_interceptor'
@@ -27,6 +26,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'sqlite3'
 
 gem 'acts-as-taggable-on'
 gem "font-awesome-rails"
@@ -59,4 +59,5 @@ end
 group :staging, :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm', '>= 3.7.3'
+  gem 'pg'
 end
