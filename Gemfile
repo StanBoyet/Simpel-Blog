@@ -26,7 +26,6 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'sqlite3'
 
 gem 'acts-as-taggable-on'
 gem "font-awesome-rails"
@@ -36,6 +35,7 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'annotate'
+gem 'sqlite3'
 end
 
 group :development, :test do
