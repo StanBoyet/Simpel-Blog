@@ -26,10 +26,11 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'sqlite3'
 
 gem 'acts-as-taggable-on'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+
+gem 'pg'
 
 group :development do
   gem 'foreman'
@@ -59,5 +60,4 @@ end
 group :staging, :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm', '>= 3.7.3'
-  gem 'pg'
 end
