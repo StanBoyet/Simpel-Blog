@@ -28,7 +28,9 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
 gem 'acts-as-taggable-on'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+
+gem 'pg'
 
 gem 'slim'
 
@@ -37,7 +39,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'annotate'
-gem 'sqlite3'
 end
 
 group :development, :test do
@@ -61,5 +62,4 @@ end
 group :staging, :production do
   gem 'rails_12factor'
   gem 'newrelic_rpm', '>= 3.7.3'
-  gem 'pg'
 end

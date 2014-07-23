@@ -1,0 +1,15 @@
+defaults_pg: &defaults_pg
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username: "<%= ENV['USER'] %>"
+  password:
+
+test:
+  <<: *defaults_pg
+  database: simpel_blog_test
+
+development:
+  <<: *defaults_pg
+  database: simpel_blog_development
